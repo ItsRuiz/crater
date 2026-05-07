@@ -30,6 +30,13 @@
       {{ $t('general.copy_pdf_url') }}
     </BaseDropdownItem>
 
+    <BaseDropdownItem v-if="route.name === 'invoices.view'">
+      <a :href="`/invoices/pdf/${row.unique_hash}`" download target="_blank" class="flex items-center w-full" style="text-decoration: none; color: inherit;">
+        <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Descargar PDF
+      </a>
+    </BaseDropdownItem>
+
     <!-- View Invoice  -->
     <router-link
       v-if="
